@@ -1,0 +1,73 @@
+/*-------------Menu styles-----------*/
+.js-nav--main{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background-color: #060031;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+  
+   .logo{
+    width: 8.333%;
+    align-items: center;
+    height: 2rem;
+    display: flex;
+    margin-left: 35px;
+   }
+   .logo img{
+    width: 12rem;
+    margin-right: 1rem;
+    display: block;
+  }
+   
+  .menu{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: auto;  
+    left: 0;
+    top: 0;
+    position: relative;
+  }
+  
+  .menu a{
+    padding: .5rem;
+    font-size: 1em;
+    color: #ffffff;
+  }
+  
+  .menu a h5{
+    position: relative;
+    padding: 8px 0 8px 0;
+    cursor: pointer;
+    flex: 1;
+    text-align: left;
+    font-weight: 600;
+    margin-right: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem; 
+    font-size:1rem;
+  }
+  
+  .menu .border-right{
+    border-right:1px solid rgba(255, 255, 255, 0.2);
+    margin-right: 2rem; 
+  }
+  
+  .js-nav--main .menu-item:before {
+    width: 0;
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    height: 1px;
+    background-color: #DE0B2C;
+    transition: .3s;
+    z-index: 1;
+  }
+  
+  .js-nav--main .menu-item:hover:before {
+    width: calc(1px + 100%);
+  }

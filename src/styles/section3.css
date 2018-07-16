@@ -1,0 +1,49 @@
+
+.section-3{
+    background-color: #EEEEF0;
+    background: linear-gradient(to right, #050035 0%, #340a3a 100%);
+    color: #fff;
+    fill: #fff;
+    z-index: 20;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    padding-left: 16.66666vw;
+    padding-right: 16.66666vw;
+}
+
+.section-3 .js-point{
+    width: 100%;
+    margin-bottom: 8rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.section-3 .js-point-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+.section-3 .js-point .js-point-image-wrapper{
+    width: 100%;
+    max-width: 560px;
+    flex-basis: 46%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.section-3 .js-point .js-point-content{
+    width: 100%;
+    flex-basis: 46%;
+    text-align: left;
+}
+
+.section-3 .js-point .js-point-content h2{
+    border-top: 2px solid #E52C58;
+    margin-bottom: 2rem;    
+    padding-top: .5rem;
+}
