@@ -2,10 +2,10 @@
     color: #060031;
     z-index: 20;
     text-align: center;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    padding-left: 16.66666vw;
-    padding-right: 16.66666vw;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 4.1666666vw;
+    padding-right: 4.1666666vw;
     position: relative;
     display: block;
 }
@@ -13,7 +13,6 @@
 .section-6 .sec-6-content {
     text-align: center;
     margin: auto;
-    width: 66.66%;
 }
 
 .section-6 .sec-6-content h2{
@@ -37,4 +36,15 @@
 
 .sec-6-btn{
     margin-top: 3rem;
+}
+@media (min-width: 960px){
+    .section-6{
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        padding-left: 16.66666vw;
+        padding-right: 16.66666vw; 
+    }
+    .section-6 .sec-6-content {
+        width: 66.66%;
+    }
 }

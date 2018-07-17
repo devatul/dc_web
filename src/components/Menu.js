@@ -1,12 +1,41 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
+import RequestDemoModal from './RequestDemoModal';
 import '../styles/menu.css';
 
 class Menu extends Component {
+    state = {
+        openRequest: false,
+        scrolledClass: ''
+    }
+    componentDidMount(){
+        window.addEventListener('scroll', (e)=>this.handleScroll(e));
+    }
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.handleScroll())
+    }
+    handleScroll = (e) =>{
+        console.log('sssssssssssssss', e, window.scrollY);
+        if(window.scrollY > 200){
+            this.setState({
+                scrolledClass: 'isScrolled'
+            });
+        }else{
+            this.setState({
+                scrolledClass: ''
+            })
+        }
+    }
   render() {
     return (
-        <nav className="js-nav--main">
+        <div className="js-nav__wrapper">
+        <div className="menu-icon">         
+            <div className="bar"></div>         
+            <div className="bar"></div>         
+            <div className="bar"></div>       
+        </div>
+        <nav className={"js-nav--main " + this.state.scrolledClass}>
             <div className="logo">           
                 <img src={logo}/>      
             </div>
@@ -23,9 +52,11 @@ class Menu extends Component {
                 <a id="login" className="p-05">
                     <h5 className="menu-item">SIGN IN</h5>
                 </a>
-                <Button label="REQUEST A DEMO" />
+                <Button onClick={()=>this.setState({openRequest:true})} label="REQUEST A DEMO" />
             </div>
         </nav>
+            <RequestDemoModal openRequest={this.state.openRequest} close={()=>this.setState({openRequest:false})}/>
+        </div>
     );
   }
 }

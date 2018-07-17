@@ -4,11 +4,11 @@
 .section-1{
     background: #250b43;
     height: 60vh;
-    padding-left: 16.66666vw;
-    padding-right: 16.66666vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 5rem;
     padding-bottom: 8rem;
-    display: flex;
+    display: block;
     align-items: flex-end;
     overflow: hidden;
     position: relative;
@@ -25,7 +25,7 @@
 .section-1 .content{
     position: relative;
     display: block;
-    width: 41vw;
+    width: 100%;
     align-self: flex-end;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -89,4 +89,15 @@
 }
 .risein {
     animation: risein 1s ease-out forwards;
+}
+
+@media (min-width: 960px){
+    .section-1{
+        padding-left: 16.66666vw;
+        padding-right: 16.66666vw;
+        display: flex;
+    }
+    .section-1 .content{
+        width: 41vw;
+    }
 }

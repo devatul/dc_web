@@ -2,17 +2,16 @@
     color: #0b0b0b;
     fill: #0b0b0b;
     text-align: center;
-    padding-bottom: 5rem;
-    padding-top: 8rem;
-    padding-left: 16.66666vw;
-    padding-right: 16.66666vw;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 4.1666666vw;
+    padding-right: 4.1666666vw;
     display: block;
 }
 
 .section-4 .sec-4-content {
     text-align: center;
     margin: auto;
-    width: 66.66%;
 }
 
 .section-4 .sec-4-content h2{
@@ -32,4 +31,13 @@
     font-size: 1.25rem;
     line-height: 1.4;
     margin: auto;
+}
+
+@media (min-width: 960px){
+    .section-4{
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        padding-left: 16.66666vw;
+        padding-right: 16.66666vw;
+    }
 }
