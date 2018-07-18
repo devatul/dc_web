@@ -8,7 +8,7 @@ class Section5 extends Component {
       <section className="section-5 bg-pattern">
         <div className="sub-section">
         <div className="image-wrapper">
-          
+          <div className="bg-image1" />
         </div>
         <div className="content-wrapper">
           <h2>AI Cloud</h2>
@@ -18,7 +18,7 @@ class Section5 extends Component {
       </div>
       <div className="sub-section sub-section-reverse">
         <div className="image-wrapper">
-        
+          <div className="bg-image2" />
         </div>
         <div className="content-wrapper">
           <h2>AI Studio</h2>
@@ -28,7 +28,7 @@ class Section5 extends Component {
       </div>
       <div className="sub-section">
         <div className="image-wrapper">
-          
+          <div className="bg-image3" />
         </div>
         <div className="content-wrapper">
           <h2>AI Runtime</h2>

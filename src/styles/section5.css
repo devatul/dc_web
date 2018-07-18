@@ -9,20 +9,17 @@
 
 .section-5 .sub-section{
     width: 100%;
-    /* display: flex; */
     align-items: flex-end;
     justify-content: space-between; 
     padding: 4rem 0;
 }
 
 .section-5 .sub-section-reverse{
-    display: flex;
     flex-direction: row-reverse;
-    align-items: flex-end; 
 }
 
 .section-5 .sub-section .image-wrapper{
-    height: 12.5vw;
+    height: 100%;
     width: 25vw;
     max-width: 480px;
     display: flex;
@@ -30,7 +27,8 @@
     justify-content: center;
     margin-right: 4.1666666vw;
     margin-bottom: 1rem;
-    margin-left: auto;
+    /* margin-left: auto; */
+    margin: auto;
     padding: 0rem;
     position: relative;
 }

@@ -7,7 +7,7 @@ class Section3 extends Component {
       <section className="section-3 js-points">
       <div className="js-point">
         <div className="js-point-image-wrapper left-box">
-        
+          <div className="bg-image1" />
         </div>
         <div className="js-point-content right-box">
           <h2>Go from raw data to productionized AI in&nbsp;minutes.</h2>
@@ -18,7 +18,7 @@ class Section3 extends Component {
       </div>
       <div className="js-point js-point-reverse">
         <div className="js-point-image-wrapper">
-
+          <div className="bg-image2" />
         </div>
         <div className="js-point-content">
           <h2>Unleash AI across your&nbsp;company.</h2>
@@ -29,7 +29,7 @@ class Section3 extends Component {
       </div>
       <div className="js-point">
         <div className="js-point-image-wrapper">
-          
+          <div className="bg-image3" />
         </div>
         <div className="js-point-content">
           <h2>AI built for you, controlled by&nbsp;you.</h2>
@@ -40,7 +40,7 @@ class Section3 extends Component {
       </div>
       <div className="js-point js-point-reverse">
         <div className="js-point-image-wrapper">
-          
+          <div className="bg-image4" />
         </div>
         <div className="js-point-content">
           <h2>Immediate ROI</h2>

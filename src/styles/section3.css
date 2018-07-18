@@ -22,7 +22,41 @@
     padding-right: 0rem;
     justify-content: space-between;
     position: relative;
+    
 }
+.bg-image1{
+    width: 190px;
+    height: 190px;
+    background: url('../assets/images/All_player_planet.png') 0px 0;
+    margin: auto;
+}
+.bg-image2{
+    width: 190px;
+    height: 190px;
+    background: url('../assets/images/All_player_planet.png') 190px 0;
+    margin: auto;
+}
+ .bg-image3{
+    width: 190px;
+    height: 190px;
+    background: url('../assets/images/All_player_planet.png') 380px 0;
+    margin: auto;
+}
+.bg-image4{
+    width: 190px;
+    height: 190px;
+    background: url('../assets/images/All_player_planet.png') 570px 0;
+    margin: auto;
+}
+.bg-image5{
+    width: 190px;
+    height: 190px;
+    background: url('../assets/images/All_player_planet.png') 770px 0;
+    margin: auto;
+}
+/*
+    
+*/ 
 .section-3 .js-point-reverse{
     flex-direction: row-reverse;
     align-items: flex-start;
