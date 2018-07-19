@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
 import RequestDemoModal from './RequestDemoModal';
+import data from '../constants';
+
 
 class Menu extends Component {
     state = {
@@ -32,6 +34,12 @@ class Menu extends Component {
     }
   render() {
       let {scrolledClass, isMenuOpen} = this.state;
+      let menuItems = [];
+      data.menu.map((d)=>{
+          menuItems.push(<a className={d.devider ? 'border-right': ''}>
+            <h5 className="menu-item">{d.label}</h5>
+        </a>)
+    })
     return (
         <div className="js-nav__wrapper">
         <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
@@ -39,18 +47,7 @@ class Menu extends Component {
                 <img src={logo}/>      
             </div>
             <div className="menu">
-                <a className="p-05">
-                    <h5 id="philosophy-link" className="menu-item m-t-3">PHILOSOPHY</h5>
-                </a>
-                <a className="p-05">
-                    <h5 id="product-link" className="menu-item">PRODUCT</h5>
-                </a>
-                <a className="p-05 border-right">
-                    <h5 id="company-link" className="menu-item">COMPANY</h5>
-                </a>
-                <a id="login" className="p-05">
-                    <h5 className="menu-item">SIGN IN</h5>
-                </a>
+                {menuItems}
                 <Button _classname="request-a-demo-btn" onClick={()=>this.setState({isRequestOpen:true})} label="REQUEST A DEMO" />
             </div>
             <div className="menu-icon" onClick={this.toggleMenu}>         
