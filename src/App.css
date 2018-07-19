@@ -1,0 +1,94 @@
+
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: calc(26px + (60 - 26) * (100vw - 320px) / (960 - 320));
+  line-height: 1 !important;
+  margin: 0 0 20px;
+}
+
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: calc(26px + (34 - 26) * (100vw - 320px) / (1680 - 320));
+  line-height: 1.2;
+  margin: 0;
+}
+h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .93rem;
+  font-style: normal;
+  line-height: 1.15;
+  font-weight: 500;
+  margin: 0;
+}
+
+p, blockquote {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 720px;
+  font-weight: 300;
+}
+label {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+input {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: .05rem;
+  border: none;
+  outline: none;
+}
+.bg-dark-gradient {
+  background: linear-gradient(to right, #050035 0%, #340a3a 100%);
+}
+.bg-pattern {
+  background-image: url(./assets/images/patternbg.png);
+  background-size: 200px;
+}
+
+.magenta {
+  color: #E52C58;
+}
+
+.bg-divider {
+  background-color: #EEEEF0;
+}
+
+.fx-b-25p {
+  flex-basis: 25%;
+}
+
+.f-w-300 {
+  font-weight: 300;
+}
+
+.fx-b-50p {
+  flex-basis: 50%;
+}
+
+.l-h-l {
+  line-height: 1.8;
+}
+.red {
+  color: #DE0B2C;
+  fill: #DE0B2C;
+}
+.f-w-500 {
+  font-weight: 500;
+}
+@media (min-width: 960px){
+  h1 {
+    font-size: calc(32px + (60 - 32) * (100vw - 960px) / (1680 - 960));
+    font-weight: 200;
+  }
+  h4 {
+      font-size: 1.15rem;
+  }
+}
+

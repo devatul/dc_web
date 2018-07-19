@@ -1,0 +1,32 @@
+button {
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .05rem;
+    border: none;
+    outline: none;
+    transition: .3s;
+    border: 2px solid transparent;
+
+
+    background-color: #DE0B2C;
+    color: #fff;
+    fill: #fff;
+    width: auto;
+    font-weight: 600;
+    margin-left: 2rem;
+    margin: 0;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    text-transform: none;
+    overflow: visible;
+    font-size: 0.9rem;
+  }
+
+ button:hover {
+    fill: black;
+    background: white;
+    color: #DE0B2C;
+    border-color: #DE0B2C;
+    opacity: 1;
+  }
