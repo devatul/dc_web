@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from './Button';
-import '../styles/section6.css';
+
 
 class Section6 extends Component {
   render() {

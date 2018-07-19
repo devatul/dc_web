@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/section4.css';
+
 
 class Section4 extends Component {
   render() {

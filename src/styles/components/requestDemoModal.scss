@@ -1,6 +1,6 @@
 .request-demo-modal{
-    background: white;
-    color: #060031;
+    background: $white;
+    color: $dark-blue;
     z-index: 400;
     height: 100vh;
     width: 92%;
@@ -15,7 +15,7 @@
     visibility: hidden;
     transform: translate3d(20px, 0, 0);
     transition: 0.1s ease-in;
-    border-left: 1px solid #e9e9e9;
+    border-left: 1px solid $gray-shade-1;
 }
 .request-demo-modal.open {
     opacity: 1;
@@ -32,7 +32,7 @@
     margin-right: 4.1666666vw;
     top: 2rem;
     position: absolute;
-    font-size: 16px; 
+    font-size: $size-px-16; 
 }
 
 .request-demo-form-wrapper{
@@ -55,10 +55,10 @@
 
 .request-demo-form-wrapper .input-field-container input{
     width: 100%;
-    background-color: #E9E9E9;
-    color: #060031;
-    border-bottom: 1px solid #E52C58;
-    font-size: 1.5rem;
+    background-color: $gray-shade-1;
+    color: $dark-blue;
+    border-bottom: 1px solid $magenta;
+    font-size: $size-rem-15;
     line-height: 1.3;
     margin-top: 1rem;
 }
@@ -74,7 +74,7 @@
 }
 .request-demo-form-success h1{
     width: 100%;
-    font-size: 3.5rem;
+    font-size: $size-rem-35;
     margin-bottom: 0rem;
     margin-top: 2rem;
     display: flex;

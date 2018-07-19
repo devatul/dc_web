@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Button from './Button';
-import '../styles/requestDemoModal.css';
 
 class RequestDemoModal extends Component {
     state={

@@ -1,3 +1,5 @@
+import './index.scss';
+import './styles/components/index.scss';
 import React, { Component } from 'react';
 import Menu from './components/Menu';
 import Section1 from './components/Section1';
@@ -7,7 +9,6 @@ import Section4 from './components/Section4';
 import Section5 from './components/Section5';
 import Section6 from './components/Section6';
 import Footer from './components/Footer';
-import './App.css';
 
 class App extends Component {
   render() {

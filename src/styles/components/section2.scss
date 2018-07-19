@@ -1,5 +1,5 @@
 .section-2{
-    color: #060031;
+    color: $dark-blue;
     z-index: 20;
     text-align: center;
     padding-top: 3rem;
@@ -16,12 +16,12 @@
 }
 
 .section-2 .sec-2-content h2{
-    border-color: #E52C58;
-    color: #E52C58;
+    border-color: $magenta;
+    color: $magenta;
     border-top: 3px solid;
     text-transform: uppercase;
     letter-spacing: .03rem;
-    font-size: 2rem;
+    font-size: $size-rem-2;
     line-height: 1.25;
     margin-bottom: 3rem;
     padding-top: 1rem;
@@ -29,7 +29,7 @@
 }
 .section-2 .sec-2-content p{
     text-align: left;
-    font-size: 1.25rem;
+    font-size: $size-rem-125;
     line-height: 1.4;
     margin: auto;
 }
