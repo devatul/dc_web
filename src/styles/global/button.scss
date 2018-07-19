@@ -8,7 +8,7 @@ button {
     transition: .3s;
     border: 2px solid transparent;
 
-
+    
     background-color: $red-shade-1;
     color: $white;
     fill: $white;
@@ -21,12 +21,11 @@ button {
     text-transform: none;
     overflow: visible;
     font-size: $size-rem-09;
-  }
-
- button:hover {
-    fill: $black;
-    background: $white;
-    color: $red-shade-1;
-    border-color: $red-shade-1;
-    opacity: 1;
+    &:hover {
+      fill: $black;
+      background: $white;
+      color: $red-shade-1;
+      border-color: $red-shade-1;
+      opacity: 1;
+    }
   }

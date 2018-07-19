@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import data from '../constants';
 
 class Footer extends Component {
-  render() {
-    console.log('data', data);
-    
+  render() {    
     return (
       <footer className="footer bg-dark-gradient">
         <div className="fx-b-25p f-w-300"></div>

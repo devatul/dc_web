@@ -52,6 +52,12 @@ input {
   background-size: 200px;
 }
 
+.fadein {
+  animation: fadein 1s ease-out forwards;
+}
+.risein {
+  animation: risein 1s ease-out forwards;
+}
 .magenta {
   color: $magenta;
 }

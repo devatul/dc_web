@@ -32,14 +32,17 @@ class Menu extends Component {
         let {isMenuOpen} = this.state;
         this.setState({isMenuOpen: !isMenuOpen});
     }
+    getMenu = () => {
+        let menuItems = [];
+        data.menu.map((d)=>{
+            menuItems.push(<a className={d.devider ? 'border-right': ''}>
+              <h5 className="menu-item">{d.label}</h5>
+          </a>)
+      });
+      return menuItems;
+    }
   render() {
       let {scrolledClass, isMenuOpen} = this.state;
-      let menuItems = [];
-      data.menu.map((d)=>{
-          menuItems.push(<a className={d.devider ? 'border-right': ''}>
-            <h5 className="menu-item">{d.label}</h5>
-        </a>)
-    })
     return (
         <div className="js-nav__wrapper">
         <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
@@ -47,7 +50,7 @@ class Menu extends Component {
                 <img src={logo}/>      
             </div>
             <div className="menu">
-                {menuItems}
+                {this.getMenu()}
                 <Button _classname="request-a-demo-btn" onClick={()=>this.setState({isRequestOpen:true})} label="REQUEST A DEMO" />
             </div>
             <div className="menu-icon" onClick={this.toggleMenu}>         
