@@ -23,13 +23,24 @@
     justify-content: space-between;
     position: relative;
     
+    
+    .bg-image1{
+        width: 190px;
+        height: 190px;
+        background: url('../assets/images/All_player_planet.png') 0px 0;
+        margin: auto;
+    }
+    
 }
+/*
+
 .bg-image1{
     width: 190px;
     height: 190px;
     background: url('../assets/images/All_player_planet.png') 0px 0;
     margin: auto;
 }
+*/
 .bg-image2{
     width: 190px;
     height: 190px;

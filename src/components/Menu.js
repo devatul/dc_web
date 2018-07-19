@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
 import RequestDemoModal from './RequestDemoModal';
-import '../styles/menu.css';
+import '../styles/menu.scss';
 
 class Menu extends Component {
     state = {
