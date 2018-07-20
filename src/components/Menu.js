@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
 import RequestDemoModal from './RequestDemoModal';
-import data from '../constants';
 
 
 class Menu extends Component {
@@ -34,7 +33,7 @@ class Menu extends Component {
     }
     getMenu = () => {
         let menuItems = [];
-        data.menu.map((d)=>{
+        this.props.data.map((d)=>{
             menuItems.push(<a className={d.devider ? 'border-right': ''}>
               <h5 className="menu-item">{d.label}</h5>
           </a>)
@@ -54,9 +53,9 @@ class Menu extends Component {
                 <Button _classname="request-a-demo-btn" onClick={()=>this.setState({isRequestOpen:true})} label="REQUEST A DEMO" />
             </div>
             <div className="menu-icon" onClick={this.toggleMenu}>         
-                <div className="bar"></div>         
-                <div className="bar"></div>         
-                <div className="bar"></div>       
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
             </div>
         </nav>
             <RequestDemoModal openRequest={this.state.isRequestOpen} close={()=>this.setState({isRequestOpen:false})}/>

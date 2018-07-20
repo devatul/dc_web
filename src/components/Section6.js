@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from './Button';
-
+import data from '../constants';
 
 class Section6 extends Component {
   render() {
@@ -10,7 +10,7 @@ class Section6 extends Component {
         <h2>OUR TEAM</h2>
         <p>
           
-        From the outset, we’ve sought to build Machinify into a customer-first company that solves real problems and delivers real results.  Each member of our team reflects that commitment. We’ve brought together leaders in the fields of software development, machine learning, data science and business.
+        {data.section6.message}
         
         </p>
       </div>
