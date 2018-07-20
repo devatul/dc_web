@@ -14,7 +14,7 @@ class Home extends Component {
     render() {
         return (
             <section>
-                <header className="section-1">
+                <header className="section header dark">
                     <div className="content-wrapper">
                         <div className="content">
                             <h1 className="js-name risein">{this.props.data.title}</h1>

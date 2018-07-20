@@ -8,44 +8,41 @@ class Article extends Component {
       switch(this.props.data.layout) {
         case 'button':
           template = (
-            <section className="section-6 bg-divider">
-              <Button _classname="sec-6-btn" label={data.title} />
+            <section className={`section ${data.theme}`}>
+              <Button _classname="sec-6-btn" onClick={()=>this.props.history.push(data.link)} label={data.title} />
             </section>);
           break;
         case 'left':
           template = (
-            <article className={`section-6 bg-pattern js-point ${data.theme==='dark' ? 'section-3' :'section-4'}`}>
-              <div className="js-point-image-wrapper">
+            <article className={`section content-t-2 ${data.theme}`}>
+              <div className="image-wrapper">
                 <div className={`image ${data.image}`} />
               </div>
-              <div className={`sec-6-content ${data.theme}`}>
-                <h2>{data.title}</h2>
+              <div className={`content`}>
+                {data.name && <h2 className="no-border">{data.name}</h2>} 
+                <h2 className={data.theme === 'light' && "magenta no-border"}>{data.title}</h2>
                 <p>{data.description}</p>
               </div>
             </article>);
           break;
         case 'right':
           template = (
-            <article className={`section-6 bg-pattern js-point ${data.theme==='dark' ? 'section-3' :'section-4'}`}>
-              <div className="js-point-image-wrapper">
+            <article className={`section content-t-2 reverse ${data.theme}`}>
+              <div className="image-wrapper">
                 <div className={`image ${data.image}`} />
               </div>
-              <div className={`sec-6-content ${data.theme}`}>
-                <h2>{data.title}</h2>
+              <div className={`content`}>
+                {data.name && <h2 className="no-border">{data.name}</h2>}
+                <h2 className={data.theme === 'light' && "magenta no-border"}>{data.title}</h2>
                 <p>{data.description}</p>
               </div>
             </article>);
           break;
         case 'title':
           template = (
-            <article className="section-6 bg-divider js-point">
-              <div className="js-point-image-wrapper">
-                <div className={`image ${data.image}`} />
-              </div>
-              <div className={`sec-6-content ${data.theme}`}>
-                <h2>{data.title}</h2>
-                <p>{data.description}</p>
-              </div>
+            <article className={`section content-t-1 ${data.theme}`}>
+              <h2>{data.title}</h2>
+              <p>{data.description}</p>
             </article>);
           break;
       };

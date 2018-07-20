@@ -46,7 +46,7 @@ class Menu extends Component {
         <div className="js-nav__wrapper">
         <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
             <div className="logo">           
-                <img src={logo}/>      
+                <img src={logo} onClick={()=>this.props.history && this.props.history.push('/home')}/>      
             </div>
             <div className="menu">
                 {this.getMenu()}

@@ -1,23 +1,23 @@
 const data = {
     menu:[
         {
-            label:'PHILOSOPHY',
-            link:'/philosophy',
+            label:'HOME',
+            link:'/home',
             devider: false
         },
         {
-            label:'PRODUCT',
-            link:'/product',
+            label:'SOLUTIONS',
+            link:'/solutions',
             devider: false
         },
         {
-            label:'COMPANY',
-            link:'/company',
+            label:'MEDIA',
+            link:'/media',
             devider: false
         },
         {
-            label:'SIGN IN',
-            link:'/signin', 
+            label:'ABOUT',
+            link:'/about', 
             devider: true
         }
     ],

@@ -1,0 +1,147 @@
+.section{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 4.1666666vw;
+    padding-right: 4.1666666vw;
+    display: flex;
+    position: relative;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* Themes: */
+    &.dark{
+        background: $blue-shade-1;
+        color: $white;
+        fill: $white;
+    }
+    &.light{
+        background-image: url(../../assets/images/patternbg.png);
+        background-size: 200px;
+        color: $dark-blue;
+    }
+    &.grey{
+        background-color: $gray-shade-3;
+        color: $dark-blue;
+    }
+    /* header section: */
+    &.header{
+    height: 60vh;
+    align-items: flex-end;
+    position: relative;
+    text-align: left;
+    .content-wrapper{
+        width: 100%;
+        align-items: baseline;
+        justify-content: space-between;
+        display: flex;  
+        position: relative;
+        .content{
+            position: relative;
+            display: block;
+            width: 100%;
+            align-self: flex-end;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .js-name{
+            color: $white;
+            fill: $white;
+            padding-top: 2rem;
+            text-align: left;
+        }
+    }
+    }
+    /*content type 1: centered content */
+    &.content-t-1 {
+        display: block;
+        h2{
+            border-color: $magenta;
+            color: $magenta;
+            border-top: 3px solid;
+            text-transform: uppercase;
+            letter-spacing: .03rem;
+            font-size: $size-rem-2;
+            line-height: 1.25;
+            margin-bottom: 3rem;
+            padding-top: 1rem;
+            display: inline-block;
+        }
+        p{
+            text-align: left;
+            font-size: $size-rem-125;
+            line-height: 1.4;
+            flex-basis: 66%;
+            margin: auto;
+        }
+        button{
+            margin-top: 3rem;
+        }        
+    }
+    /* content type 2: content with image*/
+    &.content-t-2 {
+        &.reverse{
+            flex-direction: row-reverse;
+        }
+        .image-wrapper{
+            max-width: 560px;
+            flex-basis: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            min-height: 150px;
+        }
+        .content{
+            flex-basis: 100%;
+            text-align: left;
+            h2{
+                border-top: 2px solid $magenta;
+                margin-bottom: 2rem;    
+                padding-top: .5rem;
+            }
+        }
+        .image{
+            width: 190px;
+            height: 190px;
+            margin: auto;
+            &.bg-image1{
+                background: url('../../assets/images/All_player_planet.png') 0px 0;
+            }
+            &.bg-image2{
+                background: url('../../assets/images/All_player_planet.png') 190px 0;
+            }
+            &.bg-image3{
+                background: url('../../assets/images/All_player_planet.png') 380px 0;
+            }
+            &.bg-image4{
+                background: url('../../assets/images/All_player_planet.png') 570px 0;
+            }
+            &.bg-image5{
+                background: url('../../assets/images/All_player_planet.png') 770px 0;
+            }
+        }            
+    }
+}
+
+@media (min-width: 960px){
+    .section{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        padding-left: 16.66666vw;
+        padding-right: 16.66666vw;
+        &.content-t-2 {
+            .image-wrapper{
+                flex-basis: 35%;
+            }
+            .content{
+                flex-basis: 60%;
+            }
+        }
+        &.header{
+            .content-wrapper{
+                .content{
+                    width: 41vw;
+                }
+            }
+        }
+    }   
+}

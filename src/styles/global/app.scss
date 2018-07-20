@@ -51,7 +51,9 @@ input {
   background-image: url(./assets/images/patternbg.png);
   background-size: 200px;
 }
-
+.no-border{
+  border: none !important;
+}
 .fadein {
   animation: fadein 1s ease-out forwards;
 }
