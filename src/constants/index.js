@@ -276,6 +276,55 @@ const data = {
             articles:[
                 {
                     id: 'media_article_1',
+                    group: 'event',
+                    title: 'This is a long title for a short announcement style article. This title may be as long as this example tigle.',
+                    description: null,
+                    link:'/company',
+                    image: 'img-article-1a',
+                    theme: 'dark',
+                    layout: 'tile',
+                    content: {
+                        title: "The Title of The Article Goes Here",
+                        date:"2018-02-14",
+                        location:{
+                            city: "City",
+                            state: "State"
+                        },
+                        sections:[
+                            {
+                                id: 'media_article_1_section_1',
+                                title:null, // Can be left, right, or center. Default is left. Field is optional
+                                paragraphs: [
+                                    {
+                                        id: 'media_article_1_section_1_paragraph_1',
+                                        align: "left", // Can be left, right, or center. Default is left. Field is optional
+                                        style: ["regular"], // Can be regular, italic, and/or bold. Default is ["regular"].
+                                        test:"Sunset is the time of day when our sky meets the outer space solar winds. There are blue, pink, and purple swirls, spinning and twisting, like clouds of balloons caught in a blender. The sun moves slowly to hide behind the line of horizon, while the moon races to take its place in prominence atop the night sky. People slow to a crawl, entranced, fully forgetting the deeds that still must be done. There is a coolness, a calmness, when the sun does set.", 
+                                    }, 
+                                    {
+                                        id: 'media_article_1_section_1_paragraph_2',
+                                        align: "left", // Can be left, right, or center. Default is left. Field is optional
+                                        style: ["regular"], // Can be regular, italic, and/or bold. Default is ["regular"].
+                                        test:"Sunset is the time of day when our sky meets the outer space solar winds. There are blue, pink, and purple swirls, spinning and twisting, like clouds of balloons caught in a blender. The sun moves slowly to hide behind the line of horizon, while the moon races to take its place in prominence atop the night sky. People slow to a crawl, entranced, fully forgetting the deeds that still must be done. There is a coolness, a calmness, when the sun does set.", 
+                                    }
+                                ]
+                            },
+                            {
+                                title:"Some Section Title",
+                                paragraphs: [
+                                    {
+                                        id: 'media_article_1_section_1_paragraph_1',
+                                        align: "left", // Can be left, right, or center. Default is left. Field is optional
+                                        style: ["regular"], // Can be regular, italic, and/or bold. Default is ["regular"].
+                                        test:"Sunset is the time of day when our sky meets the outer space solar winds. There are blue, pink, and purple swirls, spinning and twisting, like clouds of balloons caught in a blender. The sun moves slowly to hide behind the line of horizon, while the moon races to take its place in prominence atop the night sky. People slow to a crawl, entranced, fully forgetting the deeds that still must be done. There is a coolness, a calmness, when the sun does set.", 
+                                    },
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    id: 'media_article_2',
                     group: 'announcement',
                     title: 'This is a long title for a short announcement style article. This title may be as long as this example tigle.',
                     description: null,

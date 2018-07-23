@@ -33,6 +33,11 @@ class App extends Component {
       loading: Loading,
     });
 
+    this.Company = Loadable({
+      loader: () => import('./components/routes/media/company'),
+      loading: Loading,
+    });
+
     this.About = Loadable({
       loader: () => import('./components/routes/about'),
       loading: Loading,
@@ -50,6 +55,7 @@ class App extends Component {
           <Route path="/home" render={(props)=><this.Home {...props} data={data.page.home}/>} />
           <Route path="/solutions" render={(props)=><this.Solutions {...props} data={data.page.solutions}/>} />
           <Route path="/media" render={(props)=><this.Media {...props} data={data.page.media}/>} />
+          <Route path="/company/:id" render={(props)=><this.Company {...props} data={data.page.media}/>} />
           <Route path="/about" render={(props)=><this.About {...props} data={data.page.about}/>} />
         </Switch>
         <Footer data={data.footer}/>

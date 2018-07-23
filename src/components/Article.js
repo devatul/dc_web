@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import Button from './Button';
 
 class Article extends Component {
@@ -45,8 +46,18 @@ class Article extends Component {
               <p>{data.description}</p>
             </article>);
           break;
+          case 'tile':
+          template = (
+            <article className="tile-wrapper">
+                <div className="tile" onClick={()=>this.props.history.push(`${data.link}/${data.id}`)}>
+                    <div className="group">{data.group}</div>
+                    <div className="title">{data.title}</div>
+                    <div className="signature">Sam Smith, 2 weeks ago</div>
+                </div>
+            </article>
+          )
       };
       return template;
     }
 }
-export default Article;
+export default withRouter(Article);

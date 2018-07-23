@@ -7,25 +7,7 @@ import RequestDemoModal from './RequestDemoModal';
 class Menu extends Component {
     state = {
         isRequestOpen: false,
-        scrolledClass: '',
         isMenuOpen: false
-    }
-    componentDidMount(){
-        window.addEventListener('scroll', (e)=>this.handleScroll(e));
-    }
-    componentWillUnmount(){
-        window.removeEventListener('scroll', this.handleScroll())
-    }
-    handleScroll = (e) =>{
-        if(window.scrollY > 200){
-            this.setState({
-                scrolledClass: ' isScrolled'
-            });
-        }else{
-            this.setState({
-                scrolledClass: ''
-            })
-        }
     }
     toggleMenu = () =>{
         let {isMenuOpen} = this.state;
@@ -35,7 +17,7 @@ class Menu extends Component {
         let menuItems = [];
         this.props.data.map((d)=>{
             menuItems.push(
-                <a className={(d.divider ? 'border-right': '')} onClick={()=>this.props.history.push(d.link)}>
+                <a className={(d.divider ? 'border-right': '')} key={d.id} onClick={()=>this.props.history.push(d.link)}>
                     <h5 className="menu-item">{d.label}</h5>
                 </a>
             )
@@ -43,10 +25,10 @@ class Menu extends Component {
       return menuItems;
     }
   render() {
-      let {scrolledClass, isMenuOpen} = this.state;      
+      let {scrolledClass, isMenuOpen} = this.state;  
     return (
         <div className="js-nav__wrapper">
-            <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
+            <nav className={"js-nav--main isScrolled" + (isMenuOpen ? ' is-menu-open':'')}>
                 <div className="logo">           
                     <img src={logo} onClick={()=>this.props.history && this.props.history.push('/home')}/>      
                 </div>
