@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
+import {withRouter} from 'react-router-dom';
 import RequestDemoModal from './RequestDemoModal';
-import { BrowserRouter as Link } from 'react-router-dom';
 
 class Menu extends Component {
     state = {
@@ -35,15 +35,15 @@ class Menu extends Component {
         let menuItems = [];
         this.props.data.map((d)=>{
             menuItems.push(
-                <Link key={d.id} to={d.link} className={(d.divider ? 'border-right': '')}>
+                <a className={(d.divider ? 'border-right': '')} onClick={()=>this.props.history.push(d.link)}>
                     <h5 className="menu-item">{d.label}</h5>
-                </Link>
+                </a>
             )
       });
       return menuItems;
     }
   render() {
-      let {scrolledClass, isMenuOpen} = this.state;
+      let {scrolledClass, isMenuOpen} = this.state;      
     return (
         <div className="js-nav__wrapper">
             <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
@@ -66,4 +66,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default withRouter(Menu);

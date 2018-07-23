@@ -46,10 +46,11 @@ class App extends Component {
       <div>
         <Menu data={data.menu}/>
         <Switch>
-          <Route exact path="/" component={this.Home} data={data.page.home}/>
-          <Route path="/solutions" component={this.Solutions} data={data.page.solutions}/>
-          <Route path="/media" component={this.Media} data={data.page.media}/>
-          <Route path="/about" component={this.About} data={data.page.about}/>
+          <Route exact path="/" render={(props)=><this.Home {...props} data={data.page.home}/>} />
+          <Route path="/home" render={(props)=><this.Home {...props} data={data.page.home}/>} />
+          <Route path="/solutions" render={(props)=><this.Solutions {...props} data={data.page.solutions}/>} />
+          <Route path="/media" render={(props)=><this.Media {...props} data={data.page.media}/>} />
+          <Route path="/about" render={(props)=><this.About {...props} data={data.page.about}/>} />
         </Switch>
         <Footer data={data.footer}/>
       </div>
