@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
+import {withRouter} from 'react-router-dom';
 import RequestDemoModal from './RequestDemoModal';
-import '../styles/menu.css';
 
 class Menu extends Component {
     state = {
@@ -31,39 +31,39 @@ class Menu extends Component {
         let {isMenuOpen} = this.state;
         this.setState({isMenuOpen: !isMenuOpen});
     }
+    getMenu = () => {
+        let menuItems = [];
+        this.props.data.map((d)=>{
+            menuItems.push(
+                <a className={(d.divider ? 'border-right': '')} onClick={()=>this.props.history.push(d.link)}>
+                    <h5 className="menu-item">{d.label}</h5>
+                </a>
+            )
+      });
+      return menuItems;
+    }
   render() {
-      let {scrolledClass, isMenuOpen} = this.state;
+      let {scrolledClass, isMenuOpen} = this.state;      
     return (
         <div className="js-nav__wrapper">
-        <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
-            <div className="logo">           
-                <img src={logo}/>      
-            </div>
-            <div className="menu">
-                <a className="p-05">
-                    <h5 id="philosophy-link" className="menu-item m-t-3">PHILOSOPHY</h5>
-                </a>
-                <a className="p-05">
-                    <h5 id="product-link" className="menu-item">PRODUCT</h5>
-                </a>
-                <a className="p-05 border-right">
-                    <h5 id="company-link" className="menu-item">COMPANY</h5>
-                </a>
-                <a id="login" className="p-05">
-                    <h5 className="menu-item">SIGN IN</h5>
-                </a>
-                <Button _classname="request-a-demo-btn" onClick={()=>this.setState({isRequestOpen:true})} label="REQUEST A DEMO" />
-            </div>
-            <div className="menu-icon" onClick={this.toggleMenu}>         
-                <div className="bar"></div>         
-                <div className="bar"></div>         
-                <div className="bar"></div>       
-            </div>
-        </nav>
+            <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
+                <div className="logo">           
+                    <img src={logo} onClick={()=>this.props.history && this.props.history.push('/home')}/>      
+                </div>
+                <div className="menu">
+                    {this.getMenu()}
+                    <Button _classname="request-a-demo-btn" onClick={()=>this.setState({isRequestOpen:true})} label="REQUEST A DEMO" />
+                </div>
+                <div className="menu-icon" onClick={this.toggleMenu}>         
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                </div>
+            </nav>
             <RequestDemoModal openRequest={this.state.isRequestOpen} close={()=>this.setState({isRequestOpen:false})}/>
         </div>
     );
   }
 }
 
-export default Menu;
+export default withRouter(Menu);

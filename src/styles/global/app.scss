@@ -1,0 +1,106 @@
+
+h1 {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(24px + (60 - 26) * (100vw - 320px) / (960 - 320));
+  line-height: 1 !important;
+  margin: 0 0 20px;
+}
+
+h2 {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 300;
+  font-size: calc(24px + (34 - 26) * (100vw - 320px) / (960 - 320));
+  // font-size: calc(30px + (34 - 26) * (100vw - 320px) / (1680 - 320));
+  line-height: 1.2;
+  margin: 0;
+}
+h4 {
+  font-family: $font-family;
+  font-size: $size-rem-09;
+  font-style: normal;
+  line-height: 1.15;
+  font-weight: 500;
+  margin: 0;
+}
+
+p, blockquote {
+  font-family: $font-family;
+  padding-bottom: 1rem;
+  font-size: $size-rem-125;
+  line-height: 1.7;
+  max-width: 720px;
+  font-weight: 300;
+}
+label {
+  font-family: $font-family;
+}
+input {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: .05rem;
+  border: none;
+  outline: none;
+}
+.bg-dark-gradient {
+  background: $main-bg;
+}
+.bg-pattern {
+  background-image: url(./assets/images/patternbg.png);
+  background-size: 200px;
+}
+.no-border{
+  border: none !important;
+}
+.fadein {
+  animation: fadein 1s ease-out forwards;
+}
+.risein {
+  animation: risein 1s ease-out forwards;
+}
+.magenta {
+  color: $magenta;
+}
+
+.bg-divider {
+  background-color: $gray-shade-3;
+}
+
+.fx-b-25p {
+  flex-basis: 25%;
+}
+
+.f-w-300 {
+  font-weight: 300;
+}
+
+.fx-b-50p {
+  flex-basis: 50%;
+}
+
+.l-h-l {
+  line-height: 1.8;
+}
+.red {
+  color: $red-shade-1;
+  fill: $red-shade-1;
+}
+.f-w-500 {
+  font-weight: 500;
+}
+@media (min-width: 960px){
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 44px;
+  }
+  h4 {
+      font-size: $size-rem-115;
+  }
+}
+

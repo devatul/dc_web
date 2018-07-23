@@ -1,27 +1,60 @@
+import './index.scss';
+import './styles/components/index.scss';
+
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
+
 import Menu from './components/Menu';
-import Section1 from './components/Section1';
-import Section2 from './components/Section2';
-import Section3 from './components/Section3';
-import Section4 from './components/Section4';
-import Section5 from './components/Section5';
-import Section6 from './components/Section6';
 import Footer from './components/Footer';
-import './App.css';
+import data from './constants';
+
+
 
 class App extends Component {
+
+  constructor(){
+    super()
+
+    const Loading = () => <div>Loading...</div>;
+
+    this.Home = Loadable({
+      loader: () => import('./components/routes/home'),
+      loading: Loading,
+    });
+
+    this.Solutions = Loadable({
+      loader: () => import('./components/routes/solutions'),
+      loading: Loading,
+    });
+
+    this.Media = Loadable({
+      loader: () => import('./components/routes/media'),
+      loading: Loading,
+    });
+
+    this.About = Loadable({
+      loader: () => import('./components/routes/about'),
+      loading: Loading,
+    });
+  }
+
   render() {
+
     return (
-      <div className="App">
-        <Menu />
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Footer />
+      <Router className="App">
+      <div>
+        <Menu data={data.menu}/>
+        <Switch>
+          <Route exact path="/" render={(props)=><this.Home {...props} data={data.page.home}/>} />
+          <Route path="/home" render={(props)=><this.Home {...props} data={data.page.home}/>} />
+          <Route path="/solutions" render={(props)=><this.Solutions {...props} data={data.page.solutions}/>} />
+          <Route path="/media" render={(props)=><this.Media {...props} data={data.page.media}/>} />
+          <Route path="/about" render={(props)=><this.About {...props} data={data.page.about}/>} />
+        </Switch>
+        <Footer data={data.footer}/>
       </div>
+      </Router>
     );
   }
 }
