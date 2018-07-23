@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
 import RequestDemoModal from './RequestDemoModal';
-
+import { BrowserRouter as Link } from 'react-router-dom';
 
 class Menu extends Component {
     state = {
@@ -34,9 +34,11 @@ class Menu extends Component {
     getMenu = () => {
         let menuItems = [];
         this.props.data.map((d)=>{
-            menuItems.push(<a className={d.devider ? 'border-right': ''}>
-              <h5 className="menu-item">{d.label}</h5>
-          </a>)
+            menuItems.push(
+                <Link key={d.id} to={d.link} className={(d.divider ? 'border-right': '')}>
+                    <h5 className="menu-item">{d.label}</h5>
+                </Link>
+            )
       });
       return menuItems;
     }
@@ -44,20 +46,20 @@ class Menu extends Component {
       let {scrolledClass, isMenuOpen} = this.state;
     return (
         <div className="js-nav__wrapper">
-        <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
-            <div className="logo">           
-                <img src={logo} onClick={()=>this.props.history && this.props.history.push('/home')}/>      
-            </div>
-            <div className="menu">
-                {this.getMenu()}
-                <Button _classname="request-a-demo-btn" onClick={()=>this.setState({isRequestOpen:true})} label="REQUEST A DEMO" />
-            </div>
-            <div className="menu-icon" onClick={this.toggleMenu}>         
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-            </div>
-        </nav>
+            <nav className={"js-nav--main " + scrolledClass + (isMenuOpen ? ' is-menu-open':'')}>
+                <div className="logo">           
+                    <img src={logo} onClick={()=>this.props.history && this.props.history.push('/home')}/>      
+                </div>
+                <div className="menu">
+                    {this.getMenu()}
+                    <Button _classname="request-a-demo-btn" onClick={()=>this.setState({isRequestOpen:true})} label="REQUEST A DEMO" />
+                </div>
+                <div className="menu-icon" onClick={this.toggleMenu}>         
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                </div>
+            </nav>
             <RequestDemoModal openRequest={this.state.isRequestOpen} close={()=>this.setState({isRequestOpen:false})}/>
         </div>
     );

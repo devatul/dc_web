@@ -91,11 +91,11 @@
   
   .menu a h5{
     position: relative;
-    padding: 8px 0 8px 0;
+    padding: 1vh 0;
     cursor: pointer;
     flex: 1;
-    text-align: left;
-    font-weight: 600;
+    text-align: center;
+    font-weight: 5vh;
     margin-top: 0rem; 
     margin-bottom: 0rem;
     font-size: $size-rem-2;
@@ -125,7 +125,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: #1E0538;
+      background: $dark-blue;
       padding: 3rem;
       display: block;
       width: calc(100vw - 6rem);

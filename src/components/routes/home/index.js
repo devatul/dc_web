@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import Article from './Article';
+import Article from '../../Article';
+import Banner from './Banner';
 
 class Home extends Component {
 
     getArticles = () => {
         let articles = [];
         this.props.data.articles.map((d)=>{
-            articles.push(<Article data={d}/>)
+            articles.push(<Article key={d.id} data={d}/>)
         });
         return articles;
     }
@@ -15,9 +16,11 @@ class Home extends Component {
         return (
             <section>
                 <header className="section header dark">
+                    <Banner />
                     <div className="content-wrapper">
                         <div className="content">
-                            <h1 className="js-name risein">{this.props.data.title}</h1>
+                            <h1 className="risein">{this.props.data.title}</h1>
+                            <h2 className="risein">{this.props.data.description}</h2>
                         </div>
                     </div>
                 </header>

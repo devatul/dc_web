@@ -19,7 +19,7 @@ class Article extends Component {
                 <div className={`image ${data.image}`} />
               </div>
               <div className={`content`}>
-                {data.name && <h2 className="no-border">{data.name}</h2>} 
+                {data.group && <h2 className="no-border">{data.group}</h2>} 
                 <h2 className={data.theme === 'light' && "magenta no-border"}>{data.title}</h2>
                 <p>{data.description}</p>
               </div>
@@ -32,7 +32,7 @@ class Article extends Component {
                 <div className={`image ${data.image}`} />
               </div>
               <div className={`content`}>
-                {data.name && <h2 className="no-border">{data.name}</h2>}
+                {data.group && <h2 className="no-border">{data.group}</h2>}
                 <h2 className={data.theme === 'light' && "magenta no-border"}>{data.title}</h2>
                 <p>{data.description}</p>
               </div>

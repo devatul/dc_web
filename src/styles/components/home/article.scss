@@ -24,34 +24,6 @@
         background-color: $gray-shade-3;
         color: $dark-blue;
     }
-    /* header section: */
-    &.header{
-    height: 60vh;
-    align-items: flex-end;
-    position: relative;
-    text-align: left;
-    .content-wrapper{
-        width: 100%;
-        align-items: baseline;
-        justify-content: space-between;
-        display: flex;  
-        position: relative;
-        .content{
-            position: relative;
-            display: block;
-            width: 100%;
-            align-self: flex-end;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        .js-name{
-            color: $white;
-            fill: $white;
-            padding-top: 2rem;
-            text-align: left;
-        }
-    }
-    }
     /*content type 1: centered content */
     &.content-t-1 {
         display: block;
@@ -134,13 +106,6 @@
             }
             .content{
                 flex-basis: 60%;
-            }
-        }
-        &.header{
-            .content-wrapper{
-                .content{
-                    width: 41vw;
-                }
             }
         }
     }   
