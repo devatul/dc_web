@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Article from '../../Article';
 import Banner from './Banner';
+import {initGA} from '../../../helper';
 
 class Home extends Component {
 
@@ -11,6 +12,10 @@ class Home extends Component {
         });
         return articles;
     }
+
+    componentDidMount(){
+        initGA(this.props.location.pathname);
+      }
 
     render() {
         return (

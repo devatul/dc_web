@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import Article from '../../Article';
 import {find} from 'lodash';
 import planet from '../../../assets/images/All_player_planet.png'
+import {initGA} from '../../../helper';
 var moment = require('moment');
 
 class Company extends Component {
-
+    componentDidMount(){
+        initGA(this.props.location.pathname);
+    }
     getParaContent   = (article, date) => {
         
         let section = [];
 
         article.content.sections.map((d, i)=>{
             let para = [];
-            d.paragraphs.map((p, j)=>{
-                console.log('i === 0',i === 0 && j === 0 , i,j);
-                
+            d.paragraphs.map((p, j)=>{                
                 para.push(<p> {i === 0 && j === 0 && <span className="date-place">{`${article.content.location.city} ${article.content.location.state} - ${date} -`}</span>}{p.test}</p>)
             })
             section.push(<div className="paragraphs">

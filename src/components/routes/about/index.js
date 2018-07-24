@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Article from '../../Article';
+import {initGA} from '../../../helper';
 
 class About extends Component {
 
@@ -10,7 +11,10 @@ class About extends Component {
         });
         return articles;
     }
-
+    
+    componentDidMount(){
+        initGA(this.props.location.pathname);
+    }
     render() {
         return (
             <section>

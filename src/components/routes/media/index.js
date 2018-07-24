@@ -1,36 +1,37 @@
 import React, { Component } from 'react';
 import Article from '../../Article';
 import Button from '../../Button';
-import {indexOf, splice} from 'lodash';
+import {initGA} from '../../../helper';
+
 
 class Media extends Component {
     state = {
-        filter: []
+        filter: {
+            announcement: true,
+            article: true,
+            event:true
+        }
     }
+    componentDidMount(){
+        initGA(this.props.location.pathname);
+      }
     getArticles = () => {
         let articles = [];
         let filter = this.state.filter;
         this.props.data.articles.map((d)=>{
-            if(filter.length === 0 || filter.includes(d.group) ){
+            if(filter[d.group]){
                 articles.push(<Article key={d.id} data={d}/>)
             }
         });
         return articles;
     }
     handleFilter = (filterText)=>{
-        let filter = [];//this.state.filter;
-        let index = indexOf(filter, filterText);
-        
-       if(index === -1){
-        filter.push(filterText);
-       }
-    //    else{    
-    //     filter = filter.splice(index, 1);
-    //    }
-       this.setState({filter});
+        let filter = this.state.filter;
+        filter[filterText] = !filter[filterText];
+        this.setState({filter});
     }
     render() {
-        let filter = this.state.filter;
+        let filter = this.state.filter;        
         return (
             <section className="media">
                 <header className="section header dark">
@@ -43,9 +44,9 @@ class Media extends Component {
                 </header>
                 <div className="section body">
                     <div className="filter-wrapper">
-                        <Button _classname={`media-filter-btn ${filter.includes('announcement') ? ' active' : ''}`} label="ANNOUNCEMENT" onClick={()=>this.handleFilter('announcement')}/>
-                        <Button _classname={`media-filter-btn  ${filter.includes('article') ? ' active' : ''}`} label="ARTICLE"onClick={()=>this.handleFilter('article')}/>
-                        <Button _classname={`media-filter-btn ${filter.includes('event') ? ' active' : ''}`} label="EVENT" onClick={()=>this.handleFilter('event')}/>
+                        <Button hover={false} _classname={`media-filter-btn ${!filter.announcement ? ' filtered' : ''}`} label="ANNOUNCEMENT" onClick={()=>this.handleFilter('announcement')}/>
+                        <Button hover={false} _classname={`media-filter-btn  ${!filter.article ? ' filtered' : ''}`} label="ARTICLE"onClick={()=>this.handleFilter('article')}/>
+                        <Button hover={false} _classname={`media-filter-btn ${!filter.event ? ' filtered' : ''}`} label="EVENT" onClick={()=>this.handleFilter('event')}/>
                     </div>
                     <div className="tiles-container">
                         {this.getArticles()}

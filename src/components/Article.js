@@ -3,6 +3,9 @@ import {withRouter} from 'react-router-dom';
 import Button from './Button';
 
 class Article extends Component {
+  state = {
+    width: 'auto',
+  }
     render() {
       let template = <article></article>
       let data = this.props.data
@@ -21,7 +24,7 @@ class Article extends Component {
               </div>
               <div className={`content`}>
                 {data.group && <h2 className="no-border">{data.group}</h2>} 
-                <h2 className={data.theme === 'light' && "magenta no-border"}>{data.title}</h2>
+                <h2 className={data.theme === 'light' ? "magenta no-border" : ''}>{data.title}</h2>
                 <p>{data.description}</p>
               </div>
             </article>);
@@ -34,7 +37,7 @@ class Article extends Component {
               </div>
               <div className={`content`}>
                 {data.group && <h2 className="no-border">{data.group}</h2>}
-                <h2 className={data.theme === 'light' && "magenta no-border"}>{data.title}</h2>
+                <h2 className={data.theme === 'light' ? "magenta no-border" : ''}>{data.title}</h2>
                 <p>{data.description}</p>
               </div>
             </article>);

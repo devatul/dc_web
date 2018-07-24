@@ -3,13 +3,12 @@ button {
     font-style: normal;
     font-weight: 500;
     letter-spacing: .05rem;
-    border: none;
     outline: none;
     transition: .3s;
     border: 2px solid transparent;
 
     
-    background-color: $red-shade-1;
+    background: $red-shade-1;
     color: $white;
     fill: $white;
     width: auto;
@@ -21,11 +20,12 @@ button {
     text-transform: none;
     overflow: visible;
     font-size: $size-rem-09;
-    &:hover {
-      fill: $black;
-      background: $white;
-      color: $red-shade-1;
-      border-color: $red-shade-1;
-      opacity: 1;
-    }
+  }
+  
+  .button:hover {
+    fill: $black;
+    background: $white;
+    color: $red-shade-1;
+    border-color: $red-shade-1;
+    opacity: 1;
   }

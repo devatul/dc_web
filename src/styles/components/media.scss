@@ -12,9 +12,9 @@
     .media-filter-btn{
         border-radius: 5px;
         padding: .5rem 1rem;
-        margin-right: 1rem;
+        margin: .3rem 1rem .3rem 0;
         font-size: $size-rem-07;
-        &.active{
+        &.filtered{
             fill: $black;
             background: $white;
             color: $red-shade-1;
@@ -30,17 +30,21 @@
     .tile-wrapper{
         display: flex;
         justify-content: center;
-        flex-basis: 100%;
+        // flex-basis: 100%;
+        flex-basis: 50%;
         padding: 1.4rem 0;
     }
     .tile{
         background: $tile-bg;
-        height: 18rem;
-        max-height: 20rem;
-        flex-basis: 100%;
+        background: url('../../assets/images/themes-landscape.jpg') 50% 50%;
+        // height: 18rem;
+        // max-height: 20rem;
+        // flex-basis: 100%;
+        flex-basis: 80%;
         border-radius: 5px;
         box-shadow: 2px 2px 4px 0px $gray-shade-2;   
         padding: 1.4rem;
+        padding-top: 50%;
         text-align: left;
         color: $white;
         display: flex;
@@ -108,6 +112,17 @@
         }
     }
 }
+
+@media (max-width: 600px){
+    .media{
+        .tile-wrapper{
+            flex-basis: 100%;
+        }
+        .tile{
+            flex-basis: 80%;
+        }
+    }
+  }
 
 @media (min-width: 960px){
     .media{

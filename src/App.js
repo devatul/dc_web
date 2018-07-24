@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import data from './constants';
 
 
-
 class App extends Component {
 
   constructor(){

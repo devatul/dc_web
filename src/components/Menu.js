@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
-import {withRouter} from 'react-router-dom';
 import RequestDemoModal from './RequestDemoModal';
 
 class Menu extends Component {
@@ -13,11 +13,17 @@ class Menu extends Component {
         let {isMenuOpen} = this.state;
         this.setState({isMenuOpen: !isMenuOpen});
     }
+    handleClick = (link) => {
+        if(window.screen.width < 960){
+            this.toggleMenu();
+        }
+        this.props.history.push(link);
+    }
     getMenu = () => {
-        let menuItems = [];
+        let menuItems = [];        
         this.props.data.map((d)=>{
             menuItems.push(
-                <a className={(d.divider ? 'border-right': '')} key={d.id} onClick={()=>this.props.history.push(d.link)}>
+                <a className={(d.divider ? 'border-right': '')} key={d.id} onClick={()=>this.handleClick(d.link)}>
                     <h5 className="menu-item">{d.label}</h5>
                 </a>
             )
@@ -30,7 +36,7 @@ class Menu extends Component {
         <div className="js-nav__wrapper">
             <nav className={"js-nav--main isScrolled" + (isMenuOpen ? ' is-menu-open':'')}>
                 <div className="logo">           
-                    <img src={logo} onClick={()=>this.props.history && this.props.history.push('/home')}/>      
+                    <img src={logo} onClick={()=>this.handleClick('/home')}/>      
                 </div>
                 <div className="menu">
                     {this.getMenu()}

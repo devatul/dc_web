@@ -1,21 +1,43 @@
 import React, { Component } from 'react';
 import Button from './Button';
+import ReactGA from 'react-ga';
+const sgMail = require('@sendgrid/mail');
+
+const SENDGRID_API_KEY='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';
+sgMail.setApiKey(SENDGRID_API_KEY);
+
 
 class RequestDemoModal extends Component {
     state={
-        inputData:{}
+        inputData:{
+            name:'',
+            title:'',
+            email:''
+        }
     }
     handleChange = (e)=>{
         let {inputData} = this.state;
-        console.log('sssssssss',e.target);
         inputData[e.target.name] = e.target.value;
         this.setState({inputData});
     }
     handleSubmit=(e)=>{
         e.preventDefault();
         let {inputData} = this.state;
-        console.log('inputData',inputData);
-        // this.props.submitData(inputData);
+        const msg = {
+            to: 'test@example.com',
+            from: 'test@example.com',
+            subject: 'Request data sending to sendgrid',
+            text: 'Request with the detaild '+ JSON.stringify(inputData),
+            html: `<storng>Name : </strong>${inputData.name} <br /><storng>Title : </strong>${inputData.title} <br /><storng>Email : </strong>${inputData.email} <br />`,
+          };
+          sgMail.send(msg);
+          this.setState({inputData:{name:'',title:'',email:''}},()=>{
+            this.props.close();
+          });
+          ReactGA.event({
+            category: 'Request',
+            action: 'Request sent'
+          });
     }
   render() {
     let {inputData} = this.state;
