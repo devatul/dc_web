@@ -4,10 +4,15 @@ import './styles/components/index.scss';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
-
+import ReactGA from 'react-ga';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 import data from './constants';
+
+ReactGA.initialize('UA-122834774-1', {
+  testMode: true ,
+  debug: true,
+});
 
 
 class App extends Component {
@@ -46,7 +51,7 @@ class App extends Component {
   render() {
 
     return (
-      <Router className="App">
+      <Router onUpdat={() => { console.log('asdasdasdsadsadasdas')}} className="App">
       <div>
         <Menu data={data.menu}/>
         <Switch>
